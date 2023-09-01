@@ -1,0 +1,44 @@
+form{
+    width: 100%;
+}
+.register-title {
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    color: #271647;
+    margin: 0;
+    
+  }
+  .register-subtitle {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+    color: #271647;
+    opacity: 0.7;
+ }  
+  .btn-primary{
+  background-color: #8413a4;
+  border-color:#742F88 ;
+}
+.form-label{
+    font-family: 'Open Sans', sans-serif;
+    color: #742F88;
+    font-weight: 600;
+    font-size: 15px;
+}
+.form-control{
+    background-color: #FFFFFF;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+.form-select{
+    color: #742F88;
+}
+
+.style{
+    background-image: url('https://ausmit.in/login-bg.cf6cbd98f29b0b70.png'); background-size:cover;
+}
+.registration-section {
+    background-color: #f0eee4;
+  }
+  
