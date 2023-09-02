@@ -1,5 +1,8 @@
+import { signupStart } from 'src/app/state/auth.actions';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { AppState } from 'src/app/store/app.state';
 
 @Component({
   selector: 'app-register',
@@ -10,6 +13,7 @@ export class RegisterComponent {
 
   agreeToTerms = true;
 
+   constructor(private store: Store<AppState>){}
   ngOnInit(): void {
   }
 
@@ -22,7 +26,16 @@ export class RegisterComponent {
   });
 
   registerSubmited() {
-    console.log(this.registerForm.value);
+    if (!this.registerForm.valid) {
+      return;
+    }
+    const firstName = this.registerForm.value.firstname ?? '';
+    const lastName = this.registerForm.value.lastname ?? '';
+    const email = this.registerForm.value.email ?? '';
+    const mobile = this.registerForm.value.mobile ?? '';
+    const password = this.registerForm.value.password ?? '';
+
+    this.store.dispatch(signupStart({ firstName, lastName, email, mobile, password }));
   }
 
   get FirstName(): FormControl {
